@@ -126,6 +126,10 @@
  * heuristics and inline the function no matter how big it thinks it
  * becomes.
  */
+#ifdef __always_inline
+#undef __always_inline
+#endif
+
 #if defined(__CC_ARM)
 #  define __always_inline             __forceinline
 #elif (defined __GNUC__)
